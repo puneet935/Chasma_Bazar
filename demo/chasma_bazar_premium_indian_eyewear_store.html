@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasma Bazar | India's Trusted Optical & Eyewear Destination</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#162447',
+                            900: '#0F172A',
+                            950: '#090E1A'
+                        },
+                        amber: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Top Promotional Strip -->
+    <div class="bg-navy-950 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide">
+        <span class="text-amber-400 font-bold">FESTIVE OFFER:</span> Buy 1 Get 1 Free on all Gold Membership Frames + <span class="underline decoration-amber-400 underline-offset-2">Free Home Eye Checkup</span> across 25+ Indian Cities!
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-18 py-3.5 gap-4">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-2.5 group shrink-0">
+                    <div class="w-10 h-10 rounded-xl bg-navy-900 flex items-center justify-center text-amber-400 shadow-md group-hover:bg-navy-800 transition">
+                        <!-- Custom Sleek Glasses SVG Icon -->
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="6" cy="14" r="4"/>
+                            <circle cx="18" cy="14" r="4"/>
+                            <path d="M10 14h4"/>
+                            <path d="M2 14l2-6h2"/>
+                            <path d="M22 14l-2-6h-2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-navy-900">Chasma<span class="text-amber-500">Bazar</span></span>
+                        <span class="hidden sm:block text-[10px] uppercase tracking-widest text-slate-500 font-semibold -mt-1">Est. 1998 • Mumbai</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+                    <a href="#catalog" onclick="filterByCategory('All')" class="hover:text-amber-600 transition">Eyeglasses</a>
+                    <a href="#catalog" onclick="filterByCategory('Sunglasses')" class="hover:text-amber-600 transition">Sunglasses</a>
+                    <a href="#categories" class="hover:text-amber-600 transition">Contact Lenses</a>
+                    <a href="#catalog" onclick="filterByCategory('Computer Glasses')" class="hover:text-amber-600 transition flex items-center gap-1">
+                        Computer Glasses
+                        <span class="bg-blue-100 text-blue-700 text-[10px] px-1.5 py-0.5 rounded-full font-bold">BLU</span>
+                    </a>
+                    <button onclick="openEyeTestModal()" class="text-navy-900 bg-amber-400/20 hover:bg-amber-400/30 border border-amber-400/50 px-3.5 py-1.5 rounded-full transition flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                        Eye Test Booking
+                    </button>
+                </nav>
+
+                <!-- Search Bar & Actions -->
+                <div class="flex items-center gap-2.5 sm:gap-4">
+                    <!-- Search Input -->
+                    <div class="relative hidden md:block w-56 xl:w-64">
+                        <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Search aviators, blue cut..." 
+                            class="w-full pl-9 pr-4 py-2 text-sm bg-slate-100 border border-transparent focus:border-navy-900 focus:bg-white rounded-full outline-none transition">
+                        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Mobile Eye Test Quick Button -->
+                    <button onclick="openEyeTestModal()" class="lg:hidden text-xs font-bold bg-amber-100 text-amber-800 px-3 py-2 rounded-xl border border-amber-300">
+                        Free Eye Test
+                    </button>
+
+                    <!-- Shopping Bag Button -->
+                    <button onclick="toggleCartDrawer(true)" class="relative p-2.5 rounded-xl bg-navy-900 text-white hover:bg-navy-800 transition shadow-sm flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                        <span class="hidden sm:inline text-sm font-semibold">Bag</span>
+                        <span id="cartBadge" class="bg-amber-500 text-navy-950 text-xs font-extrabold px-1.5 py-0.5 rounded-full min-w-[20px] text-center">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Search & Menu Dropdown -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4 pt-2 border-t border-slate-100 space-y-3">
+                <div class="relative">
+                    <input type="text" oninput="handleSearch(this.value)" placeholder="Search frames, shapes, sunglasses..." 
+                        class="w-full pl-9 pr-4 py-2 text-sm bg-slate-100 rounded-xl outline-none">
+                    <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-sm font-semibold text-slate-700">
+                    <a href="#catalog" onclick="filterByCategory('All'); toggleMobileMenu()" class="p-2 rounded-lg hover:bg-slate-100">All Eyeglasses</a>
+                    <a href="#catalog" onclick="filterByCategory('Sunglasses'); toggleMobileMenu()" class="p-2 rounded-lg hover:bg-slate-100">Sunglasses</a>
+                    <a href="#catalog" onclick="filterByCategory('Computer Glasses'); toggleMobileMenu()" class="p-2 rounded-lg hover:bg-slate-100">Computer Glasses</a>
+                    <a href="#categories" onclick="toggleMobileMenu()" class="p-2 rounded-lg hover:bg-slate-100">Contact Lenses</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 text-white">
+        <!-- Decorative Background Glows -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+                
+                <!-- Left Copy & CTAs -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-amber-400">
+                        <span>✨</span> India's Fastest Growing Optical Chain • 120+ Stores
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+                        Crystal Clear Vision, <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">Crafted for India.</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Discover feather-light titanium frames, Zero-Power Blue-Cut computer glasses, and polarized sunglasses starting at <span class="text-white font-bold">₹999</span>. Get <span class="text-amber-400 font-semibold">Buy 1 Get 1 Free</span> on all prescriptions!
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#catalog" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-base shadow-lg shadow-amber-500/25 transition transform hover:-translate-y-0.5 text-center">
+                            Shop Bestsellers
+                        </a>
+                        <button onclick="openEyeTestModal()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/25 text-white font-bold text-base backdrop-blur-sm transition flex items-center justify-center gap-2.5">
+                            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Book Free Eye Test
+                        </button>
+                    </div>
+
+                    <!-- Highlighted Offer Pills -->
+                    <div class="grid grid-cols-3 gap-3 pt-4 max-w-lg mx-auto lg:mx-0 border-t border-white/10">
+                        <div>
+                            <p class="text-amber-400 font-display font-extrabold text-xl sm:text-2xl">BOGO</p>
+                            <p class="text-xs text-slate-300">Buy 1 Get 1 Free</p>
+                        </div>
+                        <div>
+                            <p class="text-amber-400 font-display font-extrabold text-xl sm:text-2xl">₹0</p>
+                            <p class="text-xs text-slate-300">Home Eye Checkup</p>
+                        </div>
+                        <div>
+                            <p class="text-amber-400 font-display font-extrabold text-xl sm:text-2xl">4.9★</p>
+                            <p class="text-xs text-slate-300">2.5L+ Happy Eyes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Showcase Visual Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-gradient-to-b from-white/10 to-white/5 border border-white/15 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+                        <!-- Top Badge -->
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-500 text-navy-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Bestseller Pick</span>
+                            <span class="text-xs text-slate-300 font-medium">Free Anti-Glare Lenses</span>
+                        </div>
+
+                        <!-- Stylish Hero Eyewear Vector Illustration -->
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
+                            <svg class="w-full max-w-[300px] h-auto drop-shadow-xl" viewBox="0 0 320 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Left Temple -->
+                                <path d="M22 52C12 52 6 58 6 66" stroke="#D97706" stroke-width="5" stroke-linecap="round"/>
+                                <!-- Right Temple -->
+                                <path d="M298 52C308 52 314 58 314 66" stroke="#D97706" stroke-width="5" stroke-linecap="round"/>
+                                <!-- Bridge -->
+                                <path d="M142 54C150 47 170 47 178 54" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+                                <path d="M146 62C153 58 167 58 174 62" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Left Frame -->
+                                <rect x="24" y="34" width="118" height="72" rx="26" fill="#E0F2FE" fill-opacity="0.45" stroke="#0F172A" stroke-width="7"/>
+                                <!-- Right Frame -->
+                                <rect x="178" y="34" width="118" height="72" rx="26" fill="#E0F2FE" fill-opacity="0.45" stroke="#0F172A" stroke-width="7"/>
+                                <!-- Gold Rim Accents -->
+                                <rect x="28" y="38" width="110" height="64" rx="22" stroke="#F59E0B" stroke-width="1.5"/>
+                                <rect x="182" y="38" width="110" height="64" rx="22" stroke="#F59E0B" stroke-width="1.5"/>
+                                <!-- Lens Reflection Glare -->
+                                <path d="M46 48L68 92" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+                                <path d="M60 48L76 80" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                                <path d="M200 48L222 92" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+                                <path d="M214 48L230 80" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                            </svg>
+                            <div class="mt-4 text-center">
+                                <p class="text-navy-900 font-display font-bold text-lg">Bombay Clubmaster Gold</p>
+                                <p class="text-slate-500 text-xs">Italian Acetate + Japanese Titanium</p>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Quick Add Bar -->
+                        <div class="mt-5 flex items-center justify-between">
+                            <div>
+                                <span class="text-slate-400 text-xs line-through">₹2,999</span>
+                                <p class="text-2xl font-display font-extrabold text-white">₹1,499 <span class="text-xs font-normal text-amber-400">(Incl. Lenses)</span></p>
+                            </div>
+                            <button onclick="quickAddHeroProduct()" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-sm transition shadow-md">
+                                + Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm text-navy-900">100% Authentic</h3>
+                        <p class="text-xs text-slate-500">1-Year Brand Warranty</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm text-navy-900">14-Day Easy Returns</h3>
+                        <p class="text-xs text-slate-500">No Questions Asked</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm text-navy-900">Free Anti-Glare</h3>
+                        <p class="text-xs text-slate-500">Scratch-Resistant Coating</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-11 h-11 rounded-xl bg-navy-900 text-amber-400 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm text-navy-900">Certified Optometrists</h3>
+                        <p class="text-xs text-slate-500">12-Step Precision Test</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Showcase Cards -->
+    <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-2">
+            <div>
+                <span class="text-amber-600 font-bold text-xs uppercase tracking-widest">Curated Collections</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">Shop by Category</h2>
+            </div>
+            <p class="text-sm text-slate-500">Select a category to explore tailored frames & lenses</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            <!-- Men -->
+            <button onclick="filterByAudience('Men')" class="group bg-white p-5 rounded-2xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-slate-100 group-hover:bg-navy-900 text-navy-900 group-hover:text-amber-400 flex items-center justify-center mb-3 transition">
+                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="2" y="9" width="8" height="6" rx="1.5"/>
+                        <rect x="14" y="9" width="8" height="6" rx="1.5"/>
+                        <path d="M10 11h4"/>
+                    </svg>
+                </div>
+                <span class="font-display font-bold text-navy-900 text-sm sm:text-base">Men</span>
+                <span class="text-xs text-slate-500 mt-0.5">420+ Styles</span>
+            </button>
+
+            <!-- Women -->
+            <button onclick="filterByAudience('Women')" class="group bg-white p-5 rounded-2xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-amber-50 group-hover:bg-navy-900 text-amber-600 group-hover:text-amber-400 flex items-center justify-center mb-3 transition">
+                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M2 10l2-2h6l1 3-1 4H4l-2-5z"/>
+                        <path d="M22 10l-2-2h-6l-1 3 1 4h6l2-5z"/>
+                        <path d="M10 10h4"/>
+                    </svg>
+                </div>
+                <span class="font-display font-bold text-navy-900 text-sm sm:text-base">Women</span>
+                <span class="text-xs text-slate-500 mt-0.5">380+ Styles</span>
+            </button>
+
+            <!-- Kids -->
+            <button onclick="filterByAudience('Kids')" class="group bg-white p-5 rounded-2xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-sky-50 group-hover:bg-navy-900 text-sky-600 group-hover:text-amber-400 flex items-center justify-center mb-3 transition">
+                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="6.5" cy="12" r="3.5"/>
+                        <circle cx="17.5" cy="12" r="3.5"/>
+                        <path d="M10 12h4"/>
+                    </svg>
+                </div>
+                <span class="font-display font-bold text-navy-900 text-sm sm:text-base">Kids</span>
+                <span class="text-xs text-slate-500 mt-0.5">Flexible TR90</span>
+            </button>
+
+            <!-- Sunglasses -->
+            <button onclick="filterByCategory('Sunglasses')" class="group bg-white p-5 rounded-2xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-orange-50 group-hover:bg-navy-900 text-orange-600 group-hover:text-amber-400 flex items-center justify-center mb-3 transition">
+                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 9h7v4a3 3 0 01-3 3H6a3 3 0 01-3-3V9zm11 0h7v4a3 3 0 01-3 3h-1a3 3 0 01-3-3V9z"/>
+                        <path d="M2 9h20M10 10h4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <span class="font-display font-bold text-navy-900 text-sm sm:text-base">Sunglasses</span>
+                <span class="text-xs text-slate-500 mt-0.5">100% UV400</span>
+            </button>
+
+            <!-- Computer Glasses -->
+            <button onclick="filterByCategory('Computer Glasses')" class="group bg-white p-5 rounded-2xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-indigo-50 group-hover:bg-navy-900 text-indigo-600 group-hover:text-amber-400 flex items-center justify-center mb-3 transition">
+                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="3" y="4" width="18" height="12" rx="2"/>
+                        <path d="M8 20h8M12 16v4"/>
+                    </svg>
+                </div>
+                <span class="font-display font-bold text-navy-900 text-sm sm:text-base">Computer BLU</span>
+                <span class="text-xs text-slate-500 mt-0.5">Zero Power Cut</span>
+            </button>
+
+            <!-- Contact Lenses -->
+            <button onclick="filterByCategory('Contact Lenses')" class="group bg-white p-5 rounded-2xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-teal-50 group-hover:bg-navy-900 text-teal-600 group-hover:text-amber-400 flex items-center justify-center mb-3 transition">
+                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 5C7 5 3 9 3 12s4 7 9 7 9-4 9-7-4-7-9-7z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
+                <span class="font-display font-bold text-navy-900 text-sm sm:text-base">Contact Lenses</span>
+                <span class="text-xs text-slate-500 mt-0.5">Daily & Monthly</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Interactive Product Catalog Section -->
+    <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            
+            <!-- Catalog Header & Filter Pills -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pb-6 border-b border-slate-100">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900">Trending Eyewear</h2>
+                        <span id="activeFilterTag" class="hidden bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full"></span>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-1">Click color swatches on any frame to preview finishes live</p>
+                </div>
+
+                <!-- Shape Filter Buttons -->
+                <div class="flex flex-wrap items-center gap-2" id="shapeFilters">
+                    <button onclick="setShapeFilter('All')" data-shape="All" class="shape-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 text-white transition">All Frames</button>
+                    <button onclick="setShapeFilter('Aviator')" data-shape="Aviator" class="shape-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Aviator</button>
+                    <button onclick="setShapeFilter('Wayfarer')" data-shape="Wayfarer" class="shape-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Wayfarer</button>
+                    <button onclick="setShapeFilter('Round')" data-shape="Round" class="shape-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Round</button>
+                    <button onclick="setShapeFilter('Cat-Eye')" data-shape="Cat-Eye" class="shape-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Cat-Eye</button>
+                    <button onclick="setShapeFilter('Rimless')" data-shape="Rimless" class="shape-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Rimless</button>
+                </div>
+            </div>
+
+            <!-- Reset Filter Bar (Shown when filtered) -->
+            <div id="filterStatusBar" class="hidden mt-4 flex items-center justify-between bg-slate-50 px-4 py-2.5 rounded-xl text-xs sm:text-sm">
+                <span id="filterResultCount" class="font-medium text-slate-600">Showing products</span>
+                <button onclick="resetAllFilters()" class="text-amber-600 hover:text-amber-700 font-bold underline">Reset Filters</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
+                <!-- Products dynamically injected by JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyCatalog" class="hidden py-16 text-center">
+                <p class="text-lg font-bold text-navy-900">No matching frames found</p>
+                <p class="text-sm text-slate-500 mt-1">Try clearing your search or selecting another frame shape.</p>
+                <button onclick="resetAllFilters()" class="mt-4 px-5 py-2.5 bg-navy-900 text-white text-sm font-bold rounded-xl">View All Eyewear</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Eye Test Promo Banner Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl">
+            <div class="absolute right-0 top-0 h-full w-1/3 bg-amber-500/10 skew-x-12 pointer-events-none"></div>
+            <div class="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="lg:col-span-8 space-y-4">
+                    <span class="inline-block bg-amber-500 text-navy-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase">Chasma Bazar At-Home Service</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-extrabold">Get a Certified Eye Checkup in Your Living Room</h2>
+                    <p class="text-slate-300 text-sm sm:text-base max-w-2xl">
+                        Our trained optometrists visit your home with portable Japanese auto-refractometers and 150+ trial frames. Available in Mumbai, Delhi NCR, Bengaluru, Pune, Hyderabad & Ahmedabad.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2 text-xs sm:text-sm font-semibold text-amber-300">
+                        <span>✓ 12-Point Digital Eye Exam</span>
+                        <span>✓ 150+ Trial Frames at Doorstep</span>
+                        <span>✓ Zero Obligation to Buy</span>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 flex lg:justify-end">
+                    <button onclick="openEyeTestModal()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-extrabold text-base shadow-lg transition transform hover:-translate-y-0.5">
+                        Schedule Home / Store Visit →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Footer -->
+    <footer class="bg-navy-950 text-slate-300 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Brand Col -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center text-navy-950 font-bold">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                                <circle cx="6" cy="14" r="4"/><circle cx="18" cy="14" r="4"/><path d="M10 14h4"/>
+                            </svg>
+                        </div>
+                        <span class="font-display font-extrabold text-xl text-white">Chasma<span class="text-amber-400">Bazar</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Crafting affordable luxury eyewear for every Indian household since 1998. Precision lenses, honest pricing, and nationwide care.
+                    </p>
+                    <div class="text-xs text-slate-400 space-y-1">
+                        <p><strong class="text-white">Customer Care:</strong> 1800-102-4276 (Toll Free)</p>
+                        <p><strong class="text-white">WhatsApp Orders:</strong> +91 98200 54321</p>
+                        <p><strong class="text-white">Email:</strong> care@chasmabazar.in</p>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Shop Eyewear</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#catalog" onclick="filterByAudience('Men')" class="hover:text-amber-400 transition">Men's Eyeglasses</a></li>
+                        <li><a href="#catalog" onclick="filterByAudience('Women')" class="hover:text-amber-400 transition">Women's Eyeglasses</a></li>
+                        <li><a href="#catalog" onclick="filterByAudience('Kids')" class="hover:text-amber-400 transition">Kids Flexible Frames</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('Computer Glasses')" class="hover:text-amber-400 transition">Zero Power BLU Glasses</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('Sunglasses')" class="hover:text-amber-400 transition">Polarized Sunglasses</a></li>
+                    </ul>
+                </div>
+
+                <!-- Flagship Stores -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Flagship Boutiques</h4>
+                    <ul class="space-y-3 text-xs text-slate-400">
+                        <li>
+                            <strong class="text-white block text-sm">Mumbai (Flagship)</strong>
+                            Linking Road, Bandra West, Mumbai - 400050
+                        </li>
+                        <li>
+                            <strong class="text-white block text-sm">Delhi NCR</strong>
+                            Inner Circle, Connaught Place, New Delhi - 110001
+                        </li>
+                        <li>
+                            <strong class="text-white block text-sm">Bengaluru</strong>
+                            100 Feet Road, Indiranagar, Bengaluru - 560038
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services & Hours -->
+                <div>
+                    <h4 class="font-display font-bold text-white mb-4">Eye Care Services</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><button onclick="openEyeTestModal()" class="hover:text-amber-400 transition">Book Free Home Eye Test</button></li>
+                        <li><button onclick="openEyeTestModal()" class="hover:text-amber-400 transition">In-Store Optometrist Visit</button></li>
+                        <li><span class="text-slate-400">Store Timings: 10:30 AM – 9:30 PM</span></li>
+                    </ul>
+                    <div class="mt-5 p-3.5 rounded-2xl bg-navy-900 border border-slate-800">
+                        <p class="text-xs text-amber-400 font-bold">100% Secure Indian Payments</p>
+                        <p class="text-[11px] text-slate-400 mt-1">UPI • RuPay • Visa • Mastercard • Bajaj Finserv No-Cost EMI</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 Chasma Bazar Opticals Pvt. Ltd. All rights reserved.</p>
+                <div class="flex gap-5">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <span>14-Day Return Policy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE-OUT SHOPPING CART DRAWER                                        -->
+    <!-- ===================================================================== -->
+    <div id="cartOverlay" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-navy-950/60 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+    <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Drawer Header -->
+        <div class="p-5 bg-navy-900 text-white flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+                <h3 class="font-display font-bold text-lg">Your Chasma Bag</h3>
+            </div>
+            <button onclick="toggleCartDrawer(false)" class="p-1.5 rounded-lg hover:bg-white/10 text-slate-300 hover:text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- BOGO Offer Banner Inside Cart -->
+        <div class="bg-amber-50 border-b border-amber-200 px-5 py-2.5 text-xs text-amber-900 font-medium flex items-center justify-between">
+            <span>🎁 <strong>BOGO Eligible:</strong> Add 2+ frames for instant savings!</span>
+            <span id="bogoStatusBadge" class="bg-amber-200 text-amber-950 font-bold px-2 py-0.5 rounded-full">0/2</span>
+        </div>
+
+        <!-- Cart Items Container -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Injected via JS -->
+        </div>
+
+        <!-- Cart Checkout Footer -->
+        <div id="cartFooter" class="p-5 bg-slate-50 border-t border-slate-200 space-y-3">
+            <div class="space-y-1.5 text-sm">
+                <div class="flex justify-between text-slate-600">
+                    <span>Frames & Lenses Subtotal</span>
+                    <span id="cartSubtotal" class="font-semibold">₹0</span>
+                </div>
+                <div id="bogoDiscountRow" class="hidden flex justify-between text-emerald-600 font-semibold">
+                    <span>BOGO Free Frame Discount</span>
+                    <span id="cartDiscount">-₹0</span>
+                </div>
+                <div class="flex justify-between text-slate-600">
+                    <span>Anti-Glare Coating & Delivery</span>
+                    <span class="text-emerald-600 font-bold">FREE</span>
+                </div>
+                <div class="flex justify-between text-base font-display font-extrabold text-navy-900 pt-2 border-t border-slate-200">
+                    <span>Total Payable (Incl. GST)</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+            </div>
+
+            <button onclick="handleCheckout()" class="w-full py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-sm shadow-lg transition flex items-center justify-center gap-2">
+                <span>Proceed to Express Checkout</span>
+                <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===================================================================== -->
+    <!-- BOOK A FREE EYE TEST MODAL                                            -->
+    <!-- ===================================================================== -->
+    <div id="eyeTestModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/70 backdrop-blur-xs">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 animate-[fadeIn_0.2s_ease-out]">
+            <!-- Modal Header -->
+            <div class="bg-navy-900 text-white p-6 flex items-center justify-between">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">100% Free • Certified Optometrist</span>
+                    <h3 class="font-display font-extrabold text-xl mt-0.5">Book Your Eye Checkup</h3>
+                </div>
+                <button onclick="closeEyeTestModal()" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Booking Form View -->
+            <form id="eyeTestForm" onsubmit="submitEyeTestBooking(event)" class="p-6 space-y-4">
+                <!-- Visit Type Switcher -->
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Select Checkup Mode</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="visitType" value="Home Visit" checked onchange="toggleVisitFields(this.value)" class="peer sr-only">
+                            <div class="p-3.5 rounded-2xl border-2 border-slate-200 peer-checked:border-amber-500 peer-checked:bg-amber-50/60 transition text-center">
+                                <p class="font-bold text-sm text-navy-900">🏠 Home Eye Test</p>
+                                <p class="text-[11px] text-slate-500 mt-0.5">Optometrist visits you</p>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="visitType" value="In-Store Visit" onchange="toggleVisitFields(this.value)" class="peer sr-only">
+                            <div class="p-3.5 rounded-2xl border-2 border-slate-200 peer-checked:border-amber-500 peer-checked:bg-amber-50/60 transition text-center">
+                                <p class="font-bold text-sm text-navy-900">🏪 Store Appointment</p>
+                                <p class="text-[11px] text-slate-500 mt-0.5">Priority VIP slot</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Patient Name & Phone -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+                        <input type="text" id="patientName" required placeholder="e.g. Aarav Sharma" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:border-navy-900 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number (+91) *</label>
+                        <input type="tel" id="patientPhone" required pattern="[0-9]{10}" placeholder="9876543210" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:border-navy-900 outline-none">
+                    </div>
+                </div>
+
+                <!-- City & Address/Store -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">City *</label>
+                        <select id="patientCity" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:border-navy-900 outline-none bg-white">
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi NCR">Delhi NCR</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                        </select>
+                    </div>
+                    <div id="locationDetailWrapper">
+                        <label id="locationDetailLabel" class="block text-xs font-semibold text-slate-700 mb-1">Pincode / Locality *</label>
+                        <input type="text" id="locationDetailInput" required placeholder="e.g. Bandra West, 400050" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:border-navy-900 outline-none">
+                    </div>
+                </div>
+
+                <!-- Date & Time Slot -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Preferred Date *</label>
+                        <input type="date" id="appointmentDate" required class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:border-navy-900 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Time Slot *</label>
+                        <select id="appointmentSlot" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:border-navy-900 outline-none bg-white">
+                            <option value="10:30 AM - 12:00 PM">10:30 AM - 12:00 PM</option>
+                            <option value="12:30 PM - 02:00 PM">12:30 PM - 02:00 PM</option>
+                            <option value="04:00 PM - 05:30 PM">04:00 PM - 05:30 PM</option>
+                            <option value="06:30 PM - 08:00 PM">06:30 PM - 08:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-extrabold text-sm shadow-md transition mt-2">
+                    Confirm Free Eye Checkup
+                </button>
+            </form>
+
+            <!-- Instant Confirmation View -->
+            <div id="eyeTestConfirmation" class="hidden p-8 text-center space-y-4">
+                <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                    <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+                <h4 class="font-display font-extrabold text-2xl text-navy-900">Appointment Confirmed!</h4>
+                <p id="confirmationSummary" class="text-sm text-slate-600 leading-relaxed"></p>
+                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 text-xs text-slate-500">
+                    Booking ID: <strong id="bookingRefId" class="text-navy-900">CB-88421</strong> • SMS & WhatsApp confirmation sent.
+                </div>
+                <button onclick="closeEyeTestModal()" class="px-6 py-2.5 rounded-xl bg-navy-900 text-white text-sm font-bold">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification (Replaces alert) -->
+    <div id="toastNotification" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden bg-navy-900 text-white px-5 py-3 rounded-2xl shadow-xl border border-white/15 flex items-center gap-3 text-sm font-medium">
+        <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+        <span id="toastMessage">Added to bag!</span>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- APPLICATION LOGIC & PRODUCT DATA                                      -->
+    <!-- ===================================================================== -->
+    <script>
+        // 1. Product Catalog Database (Indian Eyewear Pricing & Shapes)
+        const PRODUCTS = [
+            {
+                id: 'cb-101',
+                name: 'Jaipur Royal Aviator',
+                brand: 'Chasma Bazar Gold',
+                shape: 'Aviator',
+                category: 'Eyeglasses',
+                audience: 'Men',
+                price: 1499,
+                mrp: 2999,
+                rating: 4.9,
+                reviews: 312,
+                badge: 'Bestseller',
+                colors: [
+                    { name: '24K Gold', hex: '#D97706', lensTint: '#E0F2FE' },
+                    { name: 'Matte Black', hex: '#1E293B', lensTint: '#F1F5F9' },
+                    { name: 'Gunmetal', hex: '#64748B', lensTint: '#E0F2FE' }
+                ]
+            },
+            {
+                id: 'cb-102',
+                name: 'Colaba Classic Wayfarer',
+                brand: 'Chasma Bazar Air',
+                shape: 'Wayfarer',
+                category: 'Computer Glasses',
+                audience: 'Men',
+                price: 1199,
+                mrp: 2499,
+                rating: 4.8,
+                reviews: 489,
+                badge: 'Zero Power BLU',
+                colors: [
+                    { name: 'Obsidian Black', hex: '#0F172A', lensTint: '#DBEAFE' },
+                    { name: 'Tortoise Shell', hex: '#78350F', lensTint: '#DBEAFE' },
+                    { name: 'Navy Blue', hex: '#1E3A8A', lensTint: '#DBEAFE' }
+                ]
+            },
+            {
+                id: 'cb-103',
+                name: 'Udaipur Vintage Round',
+                brand: 'Chasma Bazar Heritage',
+                shape: 'Round',
+                category: 'Eyeglasses',
+                audience: 'Women',
+                price: 1699,
+                mrp: 3299,
+                rating: 4.9,
+                reviews: 215,
+                badge: 'Featherlight',
+                colors: [
+                    { name: 'Rose Gold', hex: '#E11D48', lensTint: '#FEF3C7' },
+                    { name: 'Antique Brass', hex: '#B45309', lensTint: '#F8FAFC' },
+                    { name: 'Silver', hex: '#94A3B8', lensTint: '#F8FAFC' }
+                ]
+            },
+            {
+                id: 'cb-104',
+                name: 'Bandra Glam Cat-Eye',
+                brand: 'Chasma Bazar Luxe',
+                shape: 'Cat-Eye',
+                category: 'Eyeglasses',
+                audience: 'Women',
+                price: 1899,
+                mrp: 3599,
+                rating: 4.7,
+                reviews: 178,
+                badge: 'Trending',
+                colors: [
+                    { name: 'Burgundy Wine', hex: '#881337', lensTint: '#FCE7F3' },
+                    { name: 'Jet Black', hex: '#0F172A', lensTint: '#F8FAFC' },
+                    { name: 'Amber Crystal', hex: '#D97706', lensTint: '#FEF3C7' }
+                ]
+            },
+            {
+                id: 'cb-105',
+                name: 'Koramangala Rimless Pro',
+                brand: 'Chasma Bazar Titanium',
+                shape: 'Rimless',
+                category: 'Eyeglasses',
+                audience: 'Men',
+                price: 2499,
+                mrp: 4999,
+                rating: 4.9,
+                reviews: 142,
+                badge: '11g Ultra-Light',
+                colors: [
+                    { name: 'Titanium Gold', hex: '#F59E0B', lensTint: '#F8FAFC' },
+                    { name: 'Platinum Silver', hex: '#CBD5E1', lensTint: '#F8FAFC' }
+                ]
+            },
+            {
+                id: 'cb-106',
+                name: 'Goa Polarized Sun-Aviator',
+                brand: 'Chasma Bazar Sun',
+                shape: 'Aviator',
+                category: 'Sunglasses',
+                audience: 'Men',
+                price: 1599,
+                mrp: 3199,
+                rating: 4.8,
+                reviews: 364,
+                badge: 'Polarized UV400',
+                colors: [
+                    { name: 'G-15 Green', hex: '#14532D', lensTint: '#14532D' },
+                    { name: 'Sunset Amber', hex: '#B45309', lensTint: '#92400E' },
+                    { name: 'Stealth Black', hex: '#0F172A', lensTint: '#1E293B' }
+                ]
+            },
+            {
+                id: 'cb-107',
+                name: 'Junior Flexi TR90 Round',
+                brand: 'Chasma Bazar Kids',
+                shape: 'Round',
+                category: 'Computer Glasses',
+                audience: 'Kids',
+                price: 999,
+                mrp: 1999,
+                rating: 4.9,
+                reviews: 276,
+                badge: 'Unbreakable',
+                colors: [
+                    { name: 'Electric Blue', hex: '#2563EB', lensTint: '#DBEAFE' },
+                    { name: 'Berry Pink', hex: '#DB2777', lensTint: '#DBEAFE' },
+                    { name: 'Mint Teal', hex: '#0D9488', lensTint: '#DBEAFE' }
+                ]
+            },
+            {
+                id: 'cb-108',
+                name: 'HydroClear Monthly Lenses (6 Pack)',
+                brand: 'Chasma Bazar Vision',
+                shape: 'Round',
+                category: 'Contact Lenses',
+                audience: 'Women',
+                price: 1299,
+                mrp: 1899,
+                rating: 4.8,
+                reviews: 510,
+                badge: '58% Water Content',
+                colors: [
+                    { name: 'Crystal Clear', hex: '#38BDF8', lensTint: '#E0F2FE' },
+                    { name: 'Hazel Brown', hex: '#92400E', lensTint: '#FEF3C7' }
+                ]
+            }
+        ];
+
+        // Lens Power Pricing Add-ons
+        const LENS_OPTIONS = {
+            'Zero Power (Blue Cut)': 0,
+            'Single Vision (Anti-Glare)': 500,
+            'Bifocal / Progressive': 1200,
+            'Frame Only': -200
+        };
+
+        // Application State
+        let activeShape = 'All';
+        let activeCategory = 'All';
+        let activeAudience = 'All';
+        let searchQuery = '';
+        let selectedColors = {}; // productId -> colorIndex
+        let cart = [];
+
+        // Initialize default color selections
+        PRODUCTS.forEach(p => { selectedColors[p.id] = 0; });
+
+        // 2. Render Custom SVG Frame Preview based on shape and color
+        function renderFrameSVG(shape, strokeHex, lensHex, isSun) {
+            const fillOpacity = isSun ? '0.82' : '0.45';
+            if (shape === 'Aviator') {
+                return `
+                <svg class="w-44 h-24 mx-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 220 100" fill="none">
+                    <path d="M18 35C10 35 6 40 6 46" stroke="${strokeHex}" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M202 35C210 35 214 40 214 46" stroke="${strokeHex}" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M96 32H124" stroke="${strokeHex}" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M98 40C104 37 116 37 122 40" stroke="${strokeHex}" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M20 28C20 24 88 24 96 34C100 45 94 78 64 80C34 82 20 62 20 28Z" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="4.5"/>
+                    <path d="M200 28C200 24 132 24 124 34C120 45 126 78 156 80C186 82 200 62 200 28Z" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="4.5"/>
+                    <path d="M36 36L52 68" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+                    <path d="M140 36L156 68" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+                </svg>`;
+            } else if (shape === 'Round') {
+                return `
+                <svg class="w-44 h-24 mx-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 220 100" fill="none">
+                    <path d="M24 44H12" stroke="${strokeHex}" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M196 44H208" stroke="${strokeHex}" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M96 44C103 38 117 38 124 44" stroke="${strokeHex}" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="62" cy="50" r="33" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="5"/>
+                    <circle cx="158" cy="50" r="33" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="5"/>
+                    <path d="M44 34L58 64" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+                    <path d="M140 34L154 64" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+                </svg>`;
+            } else if (shape === 'Cat-Eye') {
+                return `
+                <svg class="w-44 h-24 mx-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 220 100" fill="none">
+                    <path d="M98 42C105 38 115 38 122 42" stroke="${strokeHex}" stroke-width="4.5" stroke-linecap="round"/>
+                    <path d="M14 26L94 34C98 52 90 74 62 74C32 74 18 54 14 26Z" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M206 26L126 34C122 52 130 74 158 74C188 74 202 54 206 26Z" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M36 36L50 64" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+                    <path d="M142 36L156 64" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+                </svg>`;
+            } else if (shape === 'Rimless') {
+                return `
+                <svg class="w-44 h-24 mx-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 220 100" fill="none">
+                    <path d="M12 46H26" stroke="${strokeHex}" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M194 46H208" stroke="${strokeHex}" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M96 44C104 39 116 39 124 44" stroke="${strokeHex}" stroke-width="3.5" stroke-linecap="round"/>
+                    <rect x="26" y="30" width="70" height="42" rx="10" fill="${lensHex}" fill-opacity="0.55" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 2"/>
+                    <rect x="124" y="30" width="70" height="42" rx="10" fill="${lensHex}" fill-opacity="0.55" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3 2"/>
+                    <circle cx="30" cy="46" r="2.5" fill="${strokeHex}"/>
+                    <circle cx="92" cy="44" r="2.5" fill="${strokeHex}"/>
+                    <circle cx="128" cy="44" r="2.5" fill="${strokeHex}"/>
+                    <circle cx="190" cy="46" r="2.5" fill="${strokeHex}"/>
+                </svg>`;
+            } else {
+                // Default Wayfarer
+                return `
+                <svg class="w-44 h-24 mx-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 220 100" fill="none">
+                    <path d="M14 38H24" stroke="${strokeHex}" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M196 38H206" stroke="${strokeHex}" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M96 38H124" stroke="${strokeHex}" stroke-width="6" stroke-linecap="round"/>
+                    <rect x="22" y="28" width="74" height="48" rx="14" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="6"/>
+                    <rect x="124" y="28" width="74" height="48" rx="14" fill="${lensHex}" fill-opacity="${fillOpacity}" stroke="${strokeHex}" stroke-width="6"/>
+                    <path d="M38 36L52 66" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M140 36L154 66" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.7"/>
+                </svg>`;
+            }
+        }
+
+        // 3. Render Product Grid
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            const emptyState = document.getElementById('emptyCatalog');
+            const statusBar = document.getElementById('filterStatusBar');
+            const resultCount = document.getElementById('filterResultCount');
+
+            const filtered = PRODUCTS.filter(item => {
+                const matchShape = activeShape === 'All' || item.shape === activeShape;
+                const matchCat = activeCategory === 'All' || item.category === activeCategory;
+                const matchAud = activeAudience === 'All' || item.audience === activeAudience;
+                const matchSearch = !searchQuery || 
+                    item.name.toLowerCase().includes(searchQuery) ||
+                    item.shape.toLowerCase().includes(searchQuery) ||
+                    item.category.toLowerCase().includes(searchQuery) ||
+                    item.brand.toLowerCase().includes(searchQuery);
+                return matchShape && matchCat && matchAud && matchSearch;
+            });
+
+            // Toggle Filter Status Bar
+            const isFiltered = activeShape !== 'All' || activeCategory !== 'All' || activeAudience !== 'All' || searchQuery !== '';
+            if (isFiltered) {
+                statusBar.classList.remove('hidden');
+                resultCount.textContent = `Showing ${filtered.length} eyewear style${filtered.length === 1 ? '' : 's'}`;
+            } else {
+                statusBar.classList.add('hidden');
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(product => {
+                const cIdx = selectedColors[product.id] || 0;
+                const activeColor = product.colors[cIdx];
+                const isSun = product.category === 'Sunglasses';
+                const discountPct = Math.round(((product.mrp - product.price) / product.mrp) * 100);
+
+                return `
+                <div class="group bg-slate-50/70 hover:bg-white rounded-2xl border border-slate-200 hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                    <!-- Top Card Visual -->
+                    <div class="p-5 bg-white relative border-b border-slate-100">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-navy-900 text-amber-400">${product.badge}</span>
+                            <span class="text-xs font-bold text-slate-600 flex items-center gap-1">
+                                <span class="text-amber-500">★</span> ${product.rating} <span class="text-slate-400 font-normal">(${product.reviews})</span>
+                            </span>
+                        </div>
+
+                        <!-- Live Color-Switchable SVG Frame -->
+                        <div class="py-3">
+                            ${renderFrameSVG(product.shape, activeColor.hex, activeColor.lensTint, isSun)}
+                        </div>
+
+                        <!-- Color Swatches -->
+                        <div class="flex items-center justify-between mt-3 pt-2">
+                            <span class="text-[11px] font-medium text-slate-500">Finish: <strong class="text-slate-800">${activeColor.name}</strong></span>
+                            <div class="flex items-center gap-1.5">
+                                ${product.colors.map((col, idx) => `
+                                    <button onclick="selectProductColor('${product.id}', ${idx})" 
+                                        title="${col.name}"
+                                        style="background-color: ${col.hex}"
+                                        class="w-5 h-5 rounded-full border-2 transition-transform ${idx === cIdx ? 'border-amber-500 scale-115 ring-2 ring-amber-200' : 'border-white shadow-xs hover:scale-110'}">
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Product Info & Add Button -->
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                                <span>${product.brand}</span>
+                                <span>${product.shape}</span>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-navy-900 mt-1 group-hover:text-amber-600 transition">${product.name}</h3>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-slate-200/70 flex items-center justify-between gap-2">
+                            <div>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-display font-extrabold text-lg text-navy-900">₹${product.price.toLocaleString('en-IN')}</span>
+                                    <span class="text-xs text-slate-400 line-through">₹${product.mrp.toLocaleString('en-IN')}</span>
+                                </div>
+                                <span class="text-[11px] font-bold text-emerald-600">${discountPct}% OFF + Free Lenses</span>
+                            </div>
+
+                            <button onclick="addToCart('${product.id}')" 
+                                class="px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-amber-500 text-white hover:text-navy-950 font-bold text-xs transition shadow-xs shrink-0">
+                                + Add
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // 4. Filter & Search Handlers
+        function selectProductColor(productId, colorIdx) {
+            selectedColors[productId] = colorIdx;
+            renderProducts();
+        }
+
+        function setShapeFilter(shape) {
+            activeShape = shape;
+            document.querySelectorAll('.shape-btn').forEach(btn => {
+                if (btn.dataset.shape === shape) {
+                    btn.className = 'shape-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-navy-900 text-white transition';
+                } else {
+                    btn.className = 'shape-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+                }
+            });
+            renderProducts();
+        }
+
+        function filterByCategory(category) {
+            activeCategory = category;
+            activeAudience = 'All';
+            updateFilterTag(category !== 'All' ? category : '');
+            renderProducts();
+        }
+
+        function filterByAudience(audience) {
+            activeAudience = audience;
+            activeCategory = 'All';
+            updateFilterTag(`${audience}'s Collection`);
+            renderProducts();
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleSearch(val) {
+            searchQuery = val.trim().toLowerCase();
+            renderProducts();
+        }
+
+        function updateFilterTag(label) {
+            const tag = document.getElementById('activeFilterTag');
+            if (label) {
+                tag.textContent = label;
+                tag.classList.remove('hidden');
+            } else {
+                tag.classList.add('hidden');
+            }
+        }
+
+        function resetAllFilters() {
+            activeShape = 'All';
+            activeCategory = 'All';
+            activeAudience = 'All';
+            searchQuery = '';
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.value = '';
+            updateFilterTag('');
+            setShapeFilter('All');
+        }
+
+        // 5. Shopping Bag & Lens Power Logic
+        function addToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+            const colorIdx = selectedColors[productId] || 0;
+            const color = product.colors[colorIdx];
+            const defaultLens = product.category === 'Contact Lenses' ? 'Frame Only' : 'Zero Power (Blue Cut)';
+
+            // Check if identical item (same id, color, lens) exists
+            const existing = cart.find(c => c.productId === productId && c.colorName === color.name && c.lensType === defaultLens);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    cartItemId: Date.now() + Math.random(),
+                    productId: product.id,
+                    name: product.name,
+                    price: product.price,
+                    colorName: color.name,
+                    colorHex: color.hex,
+                    lensType: defaultLens,
+                    isContactLens: product.category === 'Contact Lenses',
+                    qty: 1
+                });
+            }
+
+            updateCartUI();
+            showToast(`Added "${product.name}" (${color.name}) to bag`);
+        }
+
+        function quickAddHeroProduct() {
+            addToCart('cb-101');
+            toggleCartDrawer(true);
+        }
+
+        function updateCartQty(cartItemId, delta) {
+            const idx = cart.findIndex(c => c.cartItemId === cartItemId);
+            if (idx === -1) return;
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) {
+                cart.splice(idx, 1);
+            }
+            updateCartUI();
+        }
+
+        function updateCartLens(cartItemId, newLens) {
+            const item = cart.find(c => c.cartItemId === cartItemId);
+            if (item) {
+                item.lensType = newLens;
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const container = document.getElementById('cartItemsContainer');
+            const footer = document.getElementById('cartFooter');
+            const bogoBadge = document.getElementById('bogoStatusBadge');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.textContent = totalItems;
+            bogoBadge.textContent = `${Math.min(totalItems, 2)}/2`;
+
+            if (cart.length === 0) {
+                footer.classList.add('hidden');
+                container.innerHTML = `
+                    <div class="py-16 text-center space-y-3">
+                        <div class="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                            </svg>
+                        </div>
+                        <p class="font-display font-bold text-navy-900">Your Chasma Bag is empty</p>
+                        <p class="text-xs text-slate-500 max-w-xs mx-auto">Explore our handcrafted eyeglasses, zero-power BLU frames, and sunglasses.</p>
+                        <button onclick="toggleCartDrawer(false)" class="mt-2 px-5 py-2.5 rounded-xl bg-navy-900 text-white text-xs font-bold">Browse Collection</button>
+                    </div>`;
+                return;
+            }
+
+            footer.classList.remove('hidden');
+            let subtotal = 0;
+
+            container.innerHTML = cart.map(item => {
+                const lensAddon = item.isContactLens ? 0 : (LENS_OPTIONS[item.lensType] || 0);
+                const unitPrice = Math.max(499, item.price + lensAddon);
+                const lineTotal = unitPrice * item.qty;
+                subtotal += lineTotal;
+
+                return `
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <h4 class="font-display font-bold text-sm text-navy-900">${item.name}</h4>
+                            <div class="flex items-center gap-1.5 mt-1 text-xs text-slate-500">
+                                <span class="w-3 h-3 rounded-full inline-block border border-slate-300" style="background:${item.colorHex}"></span>
+                                <span>${item.colorName}</span>
+                            </div>
+                        </div>
+                        <span class="font-display font-extrabold text-sm text-navy-900">₹${lineTotal.toLocaleString('en-IN')}</span>
+                    </div>
+
+                    <!-- Lens Power Selector -->
+                    ${!item.isContactLens ? `
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Lens Package</label>
+                        <select onchange="updateCartLens(${item.cartItemId}, this.value)" class="w-full text-xs font-semibold bg-white border border-slate-300 rounded-xl px-3 py-2 text-navy-900 outline-none focus:border-navy-900">
+                            ${Object.entries(LENS_OPTIONS).map(([label, diff]) => `
+                                <option value="${label}" ${item.lensType === label ? 'selected' : ''}>
+                                    ${label} ${diff > 0 ? `(+₹${diff})` : diff < 0 ? `(-₹${Math.abs(diff)})` : '(Included)'}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>` : `<p class="text-xs text-teal-700 font-semibold">Power can be uploaded or shared on WhatsApp after order.</p>`}
+
+                    <!-- Quantity Controls -->
+                    <div class="flex items-center justify-between pt-1">
+                        <span class="text-[11px] text-emerald-600 font-semibold">✓ Free Hard Case & Microfiber Cloth</span>
+                        <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-2 py-1">
+                            <button onclick="updateCartQty(${item.cartItemId}, -1)" class="w-6 h-6 rounded-lg hover:bg-slate-100 font-bold text-navy-900">−</button>
+                            <span class="text-xs font-bold w-5 text-center">${item.qty}</span>
+                            <button onclick="updateCartQty(${item.cartItemId}, 1)" class="w-6 h-6 rounded-lg hover:bg-slate-100 font-bold text-navy-900">+</button>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            // Apply BOGO Discount if 2 or more items in bag
+            const discountRow = document.getElementById('bogoDiscountRow');
+            let discount = 0;
+            if (totalItems >= 2) {
+                // Cheapest item free up to ₹1,199
+                const minItemPrice = Math.min(...cart.map(i => i.price));
+                discount = minItemPrice;
+                discountRow.classList.remove('hidden');
+                document.getElementById('cartDiscount').textContent = `-₹${discount.toLocaleString('en-IN')}`;
+            } else {
+                discountRow.classList.add('hidden');
+            }
+
+            const finalTotal = Math.max(0, subtotal - discount);
+            document.getElementById('cartSubtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+            document.getElementById('cartTotal').textContent = `₹${finalTotal.toLocaleString('en-IN')}`;
+        }
+
+        function toggleCartDrawer(open) {
+            const overlay = document.getElementById('cartOverlay');
+            const drawer = document.getElementById('cartDrawer');
+            if (open) {
+                overlay.classList.remove('hidden');
+                drawer.classList.remove('translate-x-full');
+            } else {
+                overlay.classList.add('hidden');
+                drawer.classList.add('translate-x-full');
+            }
+        }
+
+        function handleCheckout() {
+            const totalText = document.getElementById('cartTotal').textContent;
+            cart = [];
+            updateCartUI();
+            toggleCartDrawer(false);
+            showToast(`Order placed for ${totalText}! Prescription link sent via WhatsApp.`);
+        }
+
+        // 6. Eye Test Booking Modal Logic
+        function openEyeTestModal() {
+            const modal = document.getElementById('eyeTestModal');
+            document.getElementById('eyeTestForm').classList.remove('hidden');
+            document.getElementById('eyeTestConfirmation').classList.add('hidden');
+            
+            // Set minimum date to today
+            const dateInput = document.getElementById('appointmentDate');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+            if (!dateInput.value) dateInput.value = today;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeEyeTestModal() {
+            const modal = document.getElementById('eyeTestModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function toggleVisitFields(mode) {
+            const label = document.getElementById('locationDetailLabel');
+            const input = document.getElementById('locationDetailInput');
+            if (mode === 'Home Visit') {
+                label.textContent = 'Pincode / Locality *';
+                input.placeholder = 'e.g. Bandra West, 400050';
+            } else {
+                label.textContent = 'Preferred Store Area *';
+                input.placeholder = 'e.g. Linking Road / Connaught Place';
+            }
+        }
+
+        function submitEyeTestBooking(e) {
+            e.preventDefault();
+            const visitType = document.querySelector('input[name="visitType"]:checked').value;
+            const name = document.getElementById('patientName').value;
+            const city = document.getElementById('patientCity').value;
+            const loc = document.getElementById('locationDetailInput').value;
+            const date = document.getElementById('appointmentDate').value;
+            const slot = document.getElementById('appointmentSlot').value;
+
+            const randomId = 'CB-' + Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('bookingRefId').textContent = randomId;
+            document.getElementById('confirmationSummary').innerHTML = `
+                Thank you, <strong>${name}</strong>! Your <strong>Free ${visitType}</strong> in <strong>${city} (${loc})</strong> is scheduled for <strong>${date}</strong> during <strong>${slot}</strong>.
+            `;
+
+            document.getElementById('eyeTestForm').classList.add('hidden');
+            document.getElementById('eyeTestConfirmation').classList.remove('hidden');
+        }
+
+        // 7. Mobile Menu & Toast Utilities
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMessage').textContent = msg;
+            toast.classList.remove('hidden');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3200);
+        }
+
+        // Initial Render
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
